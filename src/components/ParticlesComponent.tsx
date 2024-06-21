@@ -1,86 +1,35 @@
-"use client"; // クライアントコンポーネントであることを明示
+"use client";
 
-import React from "react";
+import { useCallback } from "react";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { Engine } from "tsparticles-engine";
+import type { Container, Engine } from "tsparticles-engine";
+//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
 const ParticlesComponent: React.FC = () => {
-  const particlesInit = async (main: Engine) => {
-    await loadFull(main);
-  };
+  const particlesInit = useCallback(async (engine: Engine) => {
+    console.log(engine);
+
+    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    //await loadFull(engine);
+    await loadSlim(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(
+    async (container: Container | undefined) => {
+      await console.log(container);
+    },
+    []
+  );
 
   return (
     <Particles
-      id="particles-js"
+      id="tsparticles"
+      url="http://foo.bar/particles.json"
       init={particlesInit}
-      options={{
-        particles: {
-          number: {
-            value: 100,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            value: "#ffffff"
-          },
-          shape: {
-            type: "image",
-            stroke: {
-              width: 3,
-              color: "#fff"
-            },
-            image: {
-              src: "http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-5/img/snow.png",
-              width: 120,
-              height: 120
-            }
-          },
-          opacity: {
-            value: 0.7,
-            anim: {
-              enable: false
-            }
-          },
-          size: {
-            value: 5,
-            random: true,
-            anim: {
-              enable: false
-            }
-          },
-          line_linked: {
-            enable: false
-          },
-          move: {
-            enable: true,
-            speed: 3,
-            direction: "bottom",
-            random: true,
-            out_mode: "out",
-            attract: {
-              enable: true,
-              rotateX: 300,
-              rotateY: 1200
-            }
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: false
-            },
-            onclick: {
-              enable: false
-            },
-            resize: true
-          }
-        },
-        retina_detect: true
-      }}
+      loaded={particlesLoaded}
     />
   );
 };

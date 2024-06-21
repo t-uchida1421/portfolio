@@ -5,11 +5,13 @@ import ParticlesComponent from "@/components/ParticlesComponent";
 
 const Home: NextPage = () => {
   return (
-    <main className="bg-gradient-animate">
-      <ParticlesComponent />
+    <>
       <Header />
-      <Hero />
-    </main>
+      <main className="bg-gradient-animate">
+        <ParticlesComponent />
+        <Hero />
+      </main>
+    </>
   );
 };
 
