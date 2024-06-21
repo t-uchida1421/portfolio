@@ -1,15 +1,14 @@
-import type { NextPage } from "next";
-import Header from "@/components/Header";
+"use client";
 
-const About: NextPage = () => {
-  return (
-    <>
-      <Header />
-      <div className="flex flex-col items-center justify-center h-screen w-11/12 mx-auto">
-        <h1>About Me</h1>
-      </div>
-    </>
-  );
+import type { NextPage } from "next";
+import React from "react";
+import Particle from "react-tsparticles";
+import template from "../../components/particles/ts-particles-mask.json";
+
+const ParticlesComponents: NextPage = () => {
+  const params = template as typeof template;
+
+  return <Particle options={params as any} />;
 };
 
-export default About;
+export default ParticlesComponents;
