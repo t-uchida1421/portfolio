@@ -9,12 +9,21 @@
     font-family: "Cinzel Decorative", serif, "Merriweather Sans", sans-serif;
   }
 }
-
-/* .font-heading-black {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 900;
+#particles-js {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
-.font-merriweather {
-  font-family: "Merriweather Sans", sans-serif;
-  font-weight: 400;
-} */
+
+#wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
