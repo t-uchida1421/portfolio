@@ -13,8 +13,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isDevelopment = process.env.NODE_ENV === "development";
   return (
     <html lang="ja">
+      {isDevelopment && <meta name="robots" content="noindex, nofollow" />}
       <body className={`${inter.className} bg-zinc-800 overflow-hidden`}>
         {children}
       </body>
