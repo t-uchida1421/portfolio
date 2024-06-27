@@ -5,7 +5,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       heading: ["Cinzel Decorative", "serif"],
-      merriweather: ["Merriweather Sans", "sans-serif"]
+      menu: ["Merriweather Sans", "sans-serif"],
+      body: ["Lora", "serif"]
     }
   },
   plugins: []

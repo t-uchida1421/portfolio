@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -13,12 +14,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isDevelopment = process.env.NODE_ENV === "development";
   return (
     <html lang="ja">
-      {isDevelopment && <meta name="robots" content="noindex, nofollow" />}
-      <body className={`${inter.className} bg-zinc-800 overflow-hidden`}>
-        {children}
+      <body
+        className={`${inter.className} bg-zinc-800 overflow-hidden h-screen w-full`}
+      >
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
