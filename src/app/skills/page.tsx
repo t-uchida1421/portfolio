@@ -37,10 +37,6 @@ const Contact: NextPage = () => {
     "CSS3": {
       score: 80,
       experience: "2年"
-    },
-    "SASS": {
-      score: 70,
-      experience: "1年"
     }
   };
 
@@ -49,12 +45,12 @@ const Contact: NextPage = () => {
       <h1 className="font-heading text-center text-4xl sm:text-5xl md:text-7xl duration-500">
         SKILLS
       </h1>
-      <ul className="w-10/12 mt-7">
+      <ul className="w-10/12 mt-7 sm:flex sm:justify-between sm:flex-wrap md:mt-16">
         {Object.entries(skillData).map(([language, data], index) => (
-          <li className="w-full max-w-xl mx-auto mb-2 sm:mb-4" key={index}>
+          <li className="w-full sm:w-1/2 mb-2 sm:mb-4 sm:px-2" key={index}>
             <>
               <span className="font-body text-sm sm:text-base">{language}</span>
-              <div className="bg-white h-9 mt-1 rounded relative sm:h-12 duration-500">
+              <div className="bg-white h-7 mt-1 rounded relative sm:h-12 duration-500">
                 <div
                   className="w-0 score-bar rounded"
                   data-width={`${data.score}%`}
