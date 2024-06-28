@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center -mt-8 h-screen">
       <h1 className="text-4xl sm:text-5xl text-white text-center font-heading md:text-7xl w-11/12 duration-500">
         Teppei Uchida
       </h1>

@@ -14,50 +14,30 @@ const Contact: NextPage = () => {
   }, []);
 
   const skillData = {
-    "JavaScript": {
-      score: 90,
-      experience: "2年"
-    },
-    "TypeScript": {
-      score: 80,
-      experience: "1年半"
-    },
-    "React": {
-      score: 90,
-      experience: "2年"
-    },
-    "Next.js": {
-      score: 85,
-      experience: "2年"
-    },
-    "HTML5": {
-      score: 80,
-      experience: "2年"
-    },
-    "CSS3": {
-      score: 80,
-      experience: "2年"
-    }
+    "JavaScript": 90,
+    "TypeScript": 80,
+    "React": 90,
+    "Next.js": 85,
+    "HTML5": 80,
+    "CSS3": 80
   };
 
   return (
-    <div className="text-white flex flex-col justify-center items-center h-screen">
+    <div className="text-white flex flex-col mt-custom items-center h-screen">
       <h1 className="font-heading text-center text-4xl sm:text-5xl md:text-7xl duration-500">
         SKILLS
       </h1>
-      <ul className="w-10/12 mt-7 sm:flex sm:justify-between sm:flex-wrap md:mt-16">
-        {Object.entries(skillData).map(([language, data], index) => (
+      <ul className="w-10/12 max-w-4xl mt-5 sm:flex sm:justify-between sm:flex-wrap md:mt-16">
+        {Object.entries(skillData).map(([language, score], index) => (
           <li className="w-full sm:w-1/2 mb-2 sm:mb-4 sm:px-2" key={index}>
             <>
               <span className="font-body text-sm sm:text-base">{language}</span>
               <div className="bg-white h-7 mt-1 rounded relative sm:h-12 duration-500">
                 <div
                   className="w-0 score-bar rounded"
-                  data-width={`${data.score}%`}
+                  data-width={`${score}%`}
                 ></div>
-                <span className="font-body sm:text-xl score">
-                  {data.experience}
-                </span>
+                <span className="font-body sm:text-xl score">{`${score}点`}</span>
               </div>
             </>
           </li>

@@ -27,6 +27,17 @@ const ContactForm: React.FC = () => {
     mode: "onChange"
   });
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (body) {
+      const previousOverflow = body.style.overflow;
+      body.style.overflow = "auto";
+      return () => {
+        body.style.overflow = previousOverflow;
+      };
+    }
+  }, []);
+
   const email = watch("email");
   useEffect(() => {
     if (email && confirmEmailValue === "") {
@@ -61,7 +72,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen text-white">
+    <div className="flex flex-col mt-30v items-center h-screen text-white mt-custom">
       <h1 className="font-heading text-center text-4xl sm:text-5xl duration-500">
         CONTACT
       </h1>
@@ -72,7 +83,7 @@ const ContactForm: React.FC = () => {
         onSubmit={handleSubmit(onSubmit)}
         name="info"
         method="POST"
-        className="mt-7 w-10/12 mx-auto max-w-2xl"
+        className="mt-5 w-10/12 mx-auto max-w-2xl"
       >
         <p className="text-xs mb-1 font-body">
           <label htmlFor="name">お名前</label>
