@@ -55,7 +55,7 @@ const ContactForm: React.FC = () => {
         setIsSubmitting(false);
       })
       .catch((error) => {
-        alert(`エラーです。${error}`);
+        alert(error);
         setIsSubmitting(false);
       });
   };
