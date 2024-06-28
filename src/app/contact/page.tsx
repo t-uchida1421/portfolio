@@ -46,10 +46,10 @@ const ContactForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<FormData> = async (formData) => {
     setIsSubmitting(true);
-    const data = { ...formData };
-    (data as any)["form-name"] = "info";
+    const { confirmEmail, ...data } = formData;
+    const postData = { ...data, "form-name": "info" };
     axios
-      .post("/.netlify/functions/sendEmail", data)
+      .post("/.netlify/functions/sendEmail", postData)
       .then(() => {
         alert("ありがとうございます。メッセージは送信されました。");
         setIsSubmitting(false);
@@ -143,9 +143,12 @@ const ContactForm: React.FC = () => {
         <p className="w-full overflow-auto">
           <textarea
             id="content"
-            {...register("content")}
+            {...register("content", { required: "入力してください。" })}
             className="w-full p-2.5 rounded text-black h-28"
           ></textarea>
+          {errors.content && (
+            <p style={{ color: "#ff9393" }}>{errors.content.message}</p>
+          )}
         </p>
         <div className="w-full text-center mt-5">
           <button

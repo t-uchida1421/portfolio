@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { Handler } from "@netlify/functions";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -10,13 +11,13 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-export const handler = async (event, context) => {
+export const handler: Handler = async (event, context) => {
   try {
     const data = JSON.parse(event.body);
     const adminEmail = "teppei.uchida1421@gmail.com";
 
     const mailOptionsToUser = {
-      from: `【エンジニア】内田 哲平 <${process.env.EMAIL_USER}>`,
+      from: `内田 哲平 <${process.env.EMAIL_USER}>`,
       to: data.email,
       subject: "お問い合わせありがとうございます",
       text: `
