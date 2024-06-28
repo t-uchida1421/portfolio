@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://uchida-portfolio.netlify.app/*"
+  to = "https://t-uchida.jp/:splat"
+  status = 301
+  force = true
