@@ -33,6 +33,14 @@
 .score {
   position: absolute;
   top: 50%;
-  left: 30%;
+  left: 20%;
   transform: translateY(-50%);
+}
+.mt-custom {
+  margin-top: 10vh;
+}
+@media screen and (min-width: 640px) {
+  .mt-custom {
+    margin-top: 25vh;
+  }
 }

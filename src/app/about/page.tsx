@@ -3,14 +3,14 @@ import React from "react";
 
 const About: NextPage = () => {
   return (
-    <div className="text-white flex flex-col justify-center items-center h-screen">
+    <div className="text-white flex flex-col items-center h-screen mt-custom">
       <h1 className="font-heading text-center text-4xl sm:text-5xl md:text-7xl duration-500">
         ABOUT
       </h1>
       <h2 className="font-body text-center font-bold pt-2 text-base sm:text-xl md:text-2xl duration-500 sm:pt-4">
         フロントエンドエンジニア
       </h2>
-      <div className="font-body w-10/12 mt-7 md:mt-9 text-xs duration-500 max-w-4xl sm:mt-9 sm:text-sm md:text-base lg:text-lg">
+      <div className="font-body w-10/12 mt-7 md:mt-9 text-sm duration-500 max-w-4xl sm:mt-9 md:text-lg lg:text-xl">
         <p className="leading-7">
           1999年生まれ、広島在住のフロントエンドエンジニア。2022年9月より、フロントエンドエンジニアとしての活動を開始。その後、2023年に現在の会社に入社。
         </p>
