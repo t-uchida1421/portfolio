@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Merriweather+Sans:wght@300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,21 +10,29 @@
     font-family: "Cinzel Decorative", serif, "Merriweather Sans", sans-serif;
   }
 }
-#particles-js {
-  position: fixed;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
+.third-heading::before {
+  content: "";
+  background-color: white;
+  width: 0.7rem;
+  height: 1.5rem;
+  display: inline-block;
+  left: 4%;
+  margin-right: 0.5rem;
 }
-
-#wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-  width: 100%;
+@media screen and (min-width: 1024px) {
+  .third-heading::before {
+    height: 1.9rem;
+    margin-right: 0.9rem;
+  }
+}
+.score-bar {
   height: 100%;
+  background-color: #57a6a1;
+  transition: width 2s;
+}
+.score {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translateY(-50%);
 }

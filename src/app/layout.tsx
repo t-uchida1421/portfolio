@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "../components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,8 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${inter.className} bg-zinc-800 overflow-hidden`}>
-        {children}
+      <body
+        className={`${inter.className} bg-zinc-800 overflow-hidden h-screen w-full`}
+      >
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
