@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 export const handler: Handler = async (event, context) => {
   try {
-    const data = JSON.parse(event.body);
+    const data = JSON.parse(event.body as string);
     const adminEmail = "teppei.uchida1421@gmail.com";
 
     const mailOptionsToUser = {
@@ -42,9 +42,10 @@ export const handler: Handler = async (event, context) => {
       <p>お問い合わせありがとうございます。<br />
       こちらは自動返信メールとなっております。<br />
       内容を確認次第、ご連絡いたしますのでしばらくお待ちくださいませ。
+      </p>
 
-      内田 哲平
-      --------------------------
+      <p>内田 哲平</p>
+      <p>--------------------------</p>
 
       <p>お名前: ${data.name}</p>
       <p>メールアドレス: ${data.email}</p>

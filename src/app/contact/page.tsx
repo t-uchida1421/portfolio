@@ -155,7 +155,7 @@ const ContactForm: React.FC = () => {
             className={classNames(
               "bg-[#57a6a1] rounded p-2 font-body font-bold",
               {
-                ["form__button--un-click"]: isSubmitting
+                ["bg-gray-400"]: isSubmitting
               }
             )}
             type="submit"
