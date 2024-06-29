@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@netlify/functions": "^2.8.0",
+    "@tsparticles/engine": "^3.4.0",
+    "@tsparticles/react": "^3.0.0",
     "axios": "^1.7.2",
     "classnames": "^2.5.1",
     "dotenv": "^16.4.5",
