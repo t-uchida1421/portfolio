@@ -3,8 +3,8 @@ import React from "react";
 
 const Header: React.FC = () => {
   return (
-    <header className="pt-8 w-10/12 mx-auto max-w-4xl">
-      <ul className="flex justify-between items-center text-white">
+    <header className="absolute top-custom w-full mx-auto">
+      <ul className="flex justify-between items-center text-white w-10/12 max-w-4xl mx-auto">
         <li className="font-menu transform transition-transform hover:scale-110 text-sm sm:text-xl duration-500">
           <Link href="/" className="hover:opacity-50 duration-500">
             HOME

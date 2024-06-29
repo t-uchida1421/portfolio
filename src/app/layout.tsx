@@ -28,7 +28,7 @@ export default function RootLayout({
         />
       </Head>
       <body
-        className={`${inter.className} bg-zinc-800 overflow-hidden h-screen w-full`}
+        className={`${inter.className} bg-zinc-800 overflow-hidden relative h-screen w-full`}
       >
         <Header />
         <main>{children}</main>

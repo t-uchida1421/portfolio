@@ -72,11 +72,11 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col mt-30v items-center h-screen text-white mt-custom">
-      <h1 className="font-heading text-center text-4xl sm:text-5xl duration-500">
+    <>
+      <h1 className="font-heading text-white text-center text-4xl sm:text-5xl md:text-7xl duration-500 mt-heading">
         CONTACT
       </h1>
-      <p className="font-body text-xs mt-5 sm:text-base">
+      <p className="font-body text-center text-white text-xs mt-5 sm:text-base">
         すべて必須項目となります。
       </p>
       <form
@@ -85,7 +85,7 @@ const ContactForm: React.FC = () => {
         method="POST"
         className="mt-5 w-10/12 mx-auto max-w-2xl"
       >
-        <p className="text-xs mb-1 font-body">
+        <p className="text-xs text-white mb-1 font-body">
           <label htmlFor="name">お名前</label>
         </p>
         <p className="mb-3 w-full overflow-auto">
@@ -102,7 +102,7 @@ const ContactForm: React.FC = () => {
             </>
           )}
         </p>
-        <p className="text-xs mb-1 font-body">
+        <p className="text-xs text-white mb-1 font-body md:text-base">
           <label htmlFor="email">メールアドレス</label>
         </p>
         <p className="mb-3 w-full overflow-auto">
@@ -116,7 +116,7 @@ const ContactForm: React.FC = () => {
             <p style={{ color: "#ff9393" }}>{errors.email.message}</p>
           )}
         </p>
-        <p className="text-xs mb-1 font-body">
+        <p className="text-xs text-white mb-1 font-body md:text-base">
           <label htmlFor="confirmEmail">
             メールアドレス※再度ご記入ください
           </label>
@@ -134,7 +134,7 @@ const ContactForm: React.FC = () => {
             <p style={{ color: "#ff9393" }}>{errors.confirmEmail.message}</p>
           )}
         </p>
-        <p className="text-xs mb-1 font-body">
+        <p className="text-xs text-white mb-1 font-body md:text-base">
           <label htmlFor="phone">お電話番号</label>
         </p>
         <p className="mb-3 w-full overflow-auto">
@@ -148,7 +148,7 @@ const ContactForm: React.FC = () => {
             <p style={{ color: "#ff9393" }}>{errors.phone.message}</p>
           )}
         </p>
-        <p className="text-xs mb-1 font-body">
+        <p className="text-xs text-white mb-1 font-body md:text-base">
           <label htmlFor="content">問い合わせ内容</label>
         </p>
         <p className="w-full overflow-auto">
@@ -161,23 +161,21 @@ const ContactForm: React.FC = () => {
             <p style={{ color: "#ff9393" }}>{errors.content.message}</p>
           )}
         </p>
-        <div className="w-full text-center mt-5">
-          <button
-            className={classNames(
-              "bg-[#57a6a1] rounded p-2 font-body font-bold",
-              {
-                ["bg-gray-400"]: isSubmitting
-              }
-            )}
-            type="submit"
-            value="上記の内容で送信する"
-            disabled={isSubmitting}
-          >
-            {!isSubmitting ? "上記の内容で送信する" : "送信中です…"}
-          </button>
-        </div>
+        <button
+          className={classNames(
+            "bg-[#57a6a1] rounded p-2 font-body font-bold text-white my-5 mx-auto flex",
+            {
+              ["bg-gray-400"]: isSubmitting
+            }
+          )}
+          type="submit"
+          value="上記の内容で送信する"
+          disabled={isSubmitting}
+        >
+          {!isSubmitting ? "上記の内容で送信する" : "送信中です…"}
+        </button>
       </form>
-    </div>
+    </>
   );
 };
 
