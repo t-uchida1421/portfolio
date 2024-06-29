@@ -23,13 +23,16 @@ const Contact: NextPage = () => {
   };
 
   return (
-    <div className="text-white flex flex-col mt-custom items-center h-screen">
-      <h1 className="font-heading text-center text-4xl sm:text-5xl md:text-7xl duration-500">
+    <div className="flex flex-col items-center justify-center h-screen">
+      <h1 className="text-white font-heading text-center text-4xl sm:text-5xl md:text-7xl duration-500">
         SKILLS
       </h1>
-      <ul className="w-10/12 max-w-4xl mt-5 sm:flex sm:justify-between sm:flex-wrap md:mt-16">
+      <ul className="w-10/12 max-w-4xl mx-auto mt-5 sm:flex sm:justify-between sm:flex-wrap md:mt-16">
         {Object.entries(skillData).map(([language, score], index) => (
-          <li className="w-full sm:w-1/2 mb-2 sm:mb-4 sm:px-2" key={index}>
+          <li
+            className="w-full sm:w-1/2 mb-2 sm:mb-4 sm:px-2 text-white"
+            key={index}
+          >
             <>
               <span className="font-body text-sm sm:text-base">{language}</span>
               <div className="bg-white h-7 mt-1 rounded relative sm:h-12 duration-500">
