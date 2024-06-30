@@ -72,8 +72,8 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <>
-      <h1 className="font-heading text-white text-center text-4xl sm:text-5xl md:text-7xl duration-500 mt-heading">
+    <div className="flex flex-col justify-center items-center h-screen">
+      <h1 className="font-heading text-white text-center text-4xl sm:text-5xl md:text-7xl duration-500">
         CONTACT
       </h1>
       <p className="font-body text-center text-white text-xs mt-5 sm:text-base">
@@ -175,7 +175,7 @@ const ContactForm: React.FC = () => {
           {!isSubmitting ? "上記の内容で送信する" : "送信中です…"}
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
